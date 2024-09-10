@@ -5,19 +5,16 @@ import org.junit.Test;
 public class AccountTest {
     private Account account;
 
-    // Setup before each test
     @Before
     public void setUp() {
         account = new Account();
     }
 
-    // Test for initial balance
     @Test
     public void testInitialBalance() {
         assertEquals(0.0, account.getBalance(), 0.001);
     }
 
-    // Test for deposit
     @Test
     public void testDeposit() {
         account.deposit(100.0);
@@ -27,7 +24,6 @@ public class AccountTest {
         assertEquals(150.0, account.getBalance(), 0.001);
     }
 
-    // Test for withdrawal when balance is sufficient
     @Test
     public void testWithdrawSufficientBalance() {
         account.deposit(200.0);
@@ -45,14 +41,12 @@ public class AccountTest {
         assertEquals(50.0, account.getBalance(), 0.001);
     }
 
-    // Test for negative deposit
     @Test
     public void testNegativeDeposit() {
         account.deposit(-100.0);
         assertEquals(0.0, account.getBalance(), 0.001);
     }
 
-    // Test for negative withdrawal
     @Test
     public void testNegativeWithdraw() {
         account.deposit(100.0);
